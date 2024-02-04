@@ -24,6 +24,18 @@ interface IUser {
 export class DashboardComponent implements OnInit {
   constructor(private chartsData: DashboardChartsData) {
   }
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  chartBarData = {
+    labels: [...this.months].slice(0, 7),
+    datasets: [
+      {
+        label: 'GitHub Commits',
+        backgroundColor: '#f87979',
+        data: [40, 20, 12, 39, 17, 42, 79]
+      }
+    ]
+  };
 
   public users: IUser[] = [
     {
